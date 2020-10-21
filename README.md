@@ -30,7 +30,7 @@ Terminal 2
 ----------
 cd org2
 ./deploy.sh
-
+ 
 Terminal 1
 ----------
 cd supply-chain-api/
