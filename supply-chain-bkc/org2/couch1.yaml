@@ -1,0 +1,26 @@
+version: '3.2'
+networks:
+    my-net:
+      external:
+        name: my-net
+services:
+  couchpeer1org2:
+    image: hyperledger/fabric-couchdb
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=my-net
+    ports:
+      - 8984:5984
+    deploy:
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      # placement:
+      #   constraints:
+      #     - node.hostname == ip-server2privateip
+    networks:
+      my-net:
+        aliases:
+          - couchpeer1org2
