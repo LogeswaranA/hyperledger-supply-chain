@@ -55,5 +55,12 @@ npm install
 
 npm start
 
+Access your api's via swaagger, login using localhost:5000/api-docs 
+
+1) create user 
+2) Login
+3) Authorize & play with rest of the api'
+4) Update chaincode and add your own api's in bcNetwork.js
+
 
 --
